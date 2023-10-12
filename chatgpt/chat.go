@@ -61,7 +61,7 @@ func Chat() {
 
 func Chat1() {
 
-	apikey := "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"
+	apikey := ""
 	config := openai.DefaultConfig(apikey)
 	//proxyUrl, err := url.Parse("http://localhost:3213")
 	//if err != nil {
