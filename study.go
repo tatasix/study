@@ -1,7 +1,9 @@
 package main
 
-import "study/chatgpt"
+import (
+	"study/leetcode/first/greedy"
+)
 
 func main() {
-	chatgpt.Chat()
+	greedy.Handle()
 }
