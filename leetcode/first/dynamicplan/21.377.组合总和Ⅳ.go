@@ -9,7 +9,7 @@ import "fmt"
 // 所有可能的组合为： (1, 1, 1, 1) (1, 1, 2) (1, 2, 1) (1, 3) (2, 1, 1) (2, 2) (3, 1)
 // 请注意，顺序不同的序列被视作不同的组合。
 // 因此输出为 7。
-func combinationSum4(nums []int, target int) int {
+func combinationSum41(nums []int, target int) int {
 	dp := make([]int, target+1)
 	dp[0] = 1
 	for j := 0; j <= target; j++ {
@@ -26,4 +26,18 @@ func Handle21() {
 	nums := []int{1, 2, 3}
 	target := 4
 	fmt.Println(combinationSum4(nums, target))
+}
+func combinationSum4(nums []int, target int) int {
+	dp := make([]int, target+1)
+	dp[0] = 1
+	for j := 1; j <= target; j++ {
+		for _, v := range nums {
+			if j < v {
+				continue
+			}
+			dp[j] += dp[j-v]
+		}
+	}
+
+	return dp[target]
 }

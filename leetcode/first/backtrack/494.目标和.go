@@ -33,7 +33,7 @@ func findTargetSumWays(nums []int, target int) int {
 	return result
 }
 
-func Handle() {
+func Handle111() {
 	nums := []int{1, 1, 1, 1, 1}
 	target := 2
 	fmt.Println(findTargetSumWays(nums, target))

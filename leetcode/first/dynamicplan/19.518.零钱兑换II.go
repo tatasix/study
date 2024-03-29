@@ -7,7 +7,6 @@ import "fmt"
 // 假设每一种面额的硬币有无限个。
 // 题目数据保证结果符合 32 位带符号整数。
 // 示例 1：
-//
 // 输入：amount = 5, coins = [1, 2, 5]
 // 输出：4
 // 解释：有四种方式可以凑成总金额：
@@ -16,15 +15,13 @@ import "fmt"
 // 5=2+1+1+1
 // 5=1+1+1+1+1
 // 示例 2：
-//
 // 输入：amount = 3, coins = [2]
 // 输出：0
 // 解释：只用面额 2 的硬币不能凑成总金额 3 。
 // 示例 3：
-//
 // 输入：amount = 10, coins = [10]
 // 输出：1
-func change(amount int, coins []int) int {
+func change1(amount int, coins []int) int {
 	dp := make([]int, amount+1)
 	dp[0] = 1
 	for _, coin := range coins {
@@ -40,4 +37,14 @@ func Handle19() {
 	amount := 5
 	coins := []int{1, 2, 5}
 	fmt.Println(change(amount, coins))
+}
+func change(amount int, coins []int) int {
+	dp := make([]int, amount+1)
+	dp[0] = 1
+	for _, coin := range coins {
+		for j := coin; j <= amount; j++ {
+			dp[j] += dp[j-coin]
+		}
+	}
+	return dp[amount]
 }

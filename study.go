@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/leetcode/first/greedy"
+	"study/leetcode/first/dynamicplan"
 )
 
 func main() {
-	greedy.Handle()
+	dynamicplan.Handle()
 }
