@@ -13,24 +13,26 @@ import "fmt"
 //示例 3: 输入:text1 = "abc", text2 = "def" 输出:0 解释:两个字符串没有公共子序列，返回 0。
 
 func longestCommonSubsequence(text1, text2 string) int {
-	var result int
 	a := len(text1)
 	b := len(text2)
-	dp := make([]int, b+1)
+	dp := make([][]int, a+1)
+	for i := range dp {
+		dp[i] = make([]int, b+1)
+	}
+
 	for i := 1; i <= a; i++ {
-		for j := b; j > 0; j-- {
+		for j := 1; j <= b; j++ {
 			if text1[i-1] == text2[j-1] {
-				dp[j] = dp[j-1] + 1
-			}
-			if result < dp[j] {
-				result = dp[j]
+				dp[i][j] = dp[i-1][j-1] + 1
+			} else {
+				dp[i][j] = max(dp[i][j-1], dp[i-1][j])
 			}
 		}
 	}
-	return result
+	return dp[a][b]
 }
 
-func Handle() {
+func Handle44() {
 	text1 := "abc"
 	text2 := "abc"
 	fmt.Println(longestCommonSubsequence(text1, text2))
