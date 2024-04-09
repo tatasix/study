@@ -41,7 +41,7 @@ func maxSubArray(nums []int) int {
 	return result
 }
 
-func Handle() {
+func Handle46() {
 	nums := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
 	fmt.Println(maxSubArray(nums))
 }
