@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/leetcode/first/dynamicplan"
+	"study/defer"
 )
 
 func main() {
-	dynamicplan.Handle()
+	_defer.Handle()
 }

@@ -1,11 +1,11 @@
-package main
+package channel
 
 import (
 	"fmt"
 	"reflect"
 )
 
-func main() {
+func two() {
 	var ch1 = make(chan int, 10)
 	var ch2 = make(chan int, 10)
 	// 创建SelectCase

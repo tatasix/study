@@ -1,4 +1,4 @@
-package main
+package channel
 
 import (
 	"fmt"
@@ -58,7 +58,7 @@ func (m *Mutex) IsLocked() bool {
 	return len(m.ch) == 0
 }
 
-func main() {
+func lock() {
 	m := NewMutex()
 	ok := m.TryLock()
 	fmt.Printf("locked v %v\n", ok)
