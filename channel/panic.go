@@ -45,7 +45,7 @@ func panic5() {
 }
 
 func Handle() {
-	test()
+	panic1()
 }
 
 func test() {

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/defer"
+	"study/slice"
 )
 
 func main() {
-	_defer.Handle()
+	slice.Handle()
 }
