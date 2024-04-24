@@ -5,7 +5,7 @@ import (
 )
 
 func Handle() {
-	t12()
+	t11()
 }
 func t1() {
 	s := make([]int, 10)
@@ -79,8 +79,14 @@ func changeSlice1(s1 []int) {
 
 func t11() {
 	s := []int{0, 1, 2, 3, 4}
-	s = append(s[:2], s[3:]...)
-	fmt.Printf("s: %v, len: %d, cap: %d", s, len(s), cap(s))
+	a := s[:2]
+	b := s[3:]
+	fmt.Printf("b: %v, len: %d, cap: %d \n", b, len(b), cap(b))
+	fmt.Printf("a: %v, len: %d, cap: %d \n", a, len(a), cap(a))
+	s = append(a, b...)
+	fmt.Printf("s: %v, len: %d, cap: %d \n", s, len(s), cap(s))
+	fmt.Printf("a: %v, len: %d, cap: %d \n", a, len(a), cap(a))
+	fmt.Printf("b: %v, len: %d, cap: %d \n", b, len(b), cap(b))
 	//v := s[4]
 	// 是否会数组访问越界
 	//fmt.Println(v)
