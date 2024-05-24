@@ -1,0 +1,21 @@
+# github.com/go-pay/bm v0.0.2
+## explicit; go 1.20
+github.com/go-pay/bm
+# github.com/go-pay/gopay v1.5.100
+## explicit; go 1.20
+github.com/go-pay/gopay
+github.com/go-pay/gopay/pkg/jwt
+# github.com/go-pay/xhttp v0.0.2
+## explicit; go 1.20
+github.com/go-pay/xhttp
+# github.com/sashabaranov/go-openai v1.14.1
+## explicit; go 1.18
+github.com/sashabaranov/go-openai
+github.com/sashabaranov/go-openai/internal
+# github.com/tataAshley/gopay v0.0.0-20240523015038-f5f004ee6bc8
+## explicit; go 1.20
+github.com/tataAshley/gopay
+github.com/tataAshley/gopay/apple
+# golang.org/x/sync v0.7.0
+## explicit; go 1.18
+golang.org/x/sync/singleflight

@@ -1,2 +1,14 @@
+github.com/go-pay/bm v0.0.2 h1:CLa5hNTIm6uv8HSWGWd4moZbuOzQqJo5HcScXBBSY/E=
+github.com/go-pay/bm v0.0.2/go.mod h1:nyglxC5YS4+gVaO9TxLMI0I/naFUqwffdt5n6llM8uM=
+github.com/go-pay/gopay v1.5.100 h1:jFpyLA/flrSigY0WFpNaSuQcMFn0yjFpObBnlTzqO9Y=
+github.com/go-pay/gopay v1.5.100/go.mod h1:3z9xfh7w3x5rJzH9qFb3oxPOeaBrFP4kB3LNVXbziHM=
+github.com/go-pay/util v0.0.2 h1:goJ4f6kNY5zzdtg1Cj8oWC+Cw7bfg/qq2rJangMAb9U=
+github.com/go-pay/xhttp v0.0.2 h1:O8rnd/d03WsboFtUthwFMg61ikHRfYHyD1m0JiUx60g=
+github.com/go-pay/xhttp v0.0.2/go.mod h1:BnuvXpLKkXTFMOBc5MTb0hxdrstwunbzQPJUZOsNbt4=
+github.com/go-pay/xlog v0.0.2 h1:kUg5X8/5VZAPDg1J5eGjA3MG0/H5kK6Ew0dW/Bycsws=
 github.com/sashabaranov/go-openai v1.14.1 h1:jqfkdj8XHnBF84oi2aNtT8Ktp3EJ0MfuVjvcMkfI0LA=
 github.com/sashabaranov/go-openai v1.14.1/go.mod h1:lj5b/K+zjTSFxVLijLSTDZuP7adOgerWeFyZLUhAKRg=
+github.com/tataAshley/gopay v0.0.0-20240523015038-f5f004ee6bc8 h1:1S7vPKZ2X0O/E4FGyJjMbrLi/EJlvX5r50R0Yt/D+So=
+github.com/tataAshley/gopay v0.0.0-20240523015038-f5f004ee6bc8/go.mod h1:ttbOQbfjAQbFaGmFZ/+8h9dAEf0iVtwUetIUiOmyelI=
+golang.org/x/sync v0.7.0 h1:YsImfSBoP9QPYL0xyKJPq0gcaJdG3rInoqxTWbfQu9M=
+golang.org/x/sync v0.7.0/go.mod h1:Czt+wKu1gCyEFDUtn0jG5QVvpJ6rzVqr5aXyt9drQfk=

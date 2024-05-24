@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/slice"
+	_interface "study/interface"
 )
 
 func main() {
-	slice.Handle()
+	_interface.Handle()
 }
