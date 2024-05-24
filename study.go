@@ -1,9 +1,9 @@
 package main
 
 import (
-	_interface "study/interface"
+	_defer "study/defer"
 )
 
 func main() {
-	_interface.Handle()
+	_defer.Handle()
 }
