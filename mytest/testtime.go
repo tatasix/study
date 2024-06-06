@@ -6,11 +6,12 @@ import (
 )
 
 const (
-	RightsTimesPeriodDay     = 1
-	RightsTimesPeriodZero    = 2
-	RightsTimesPeriodMonth   = 3
-	RightsTimesPeriodYear    = 4
-	RightsTimesPeriodForever = 5
+	_ = iota
+	RightsTimesPeriodDay
+	RightsTimesPeriodZero
+	RightsTimesPeriodMonth
+	RightsTimesPeriodYear
+	RightsTimesPeriodForever
 )
 
 func generateTimeRange(now time.Time, period int) (start time.Time, end time.Time) {

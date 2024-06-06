@@ -1,10 +1,10 @@
-package main
+package sort
 
-// write a bubble sort function
+import "fmt"
 
-type T struct {
-	Mobile      string `json:"mobile"`
-	Code        string `json:"code"`
-	IsLoginFree int    `json:"is_login_free"`
-	User        string `json:"user"`
+func Handle() {
+	origin := []int{1, 2, 0, 22, 4, 3, 12, 9}
+	Quicksort(origin)
+	//BubbleSort(origin)
+	fmt.Println(origin)
 }

@@ -1,9 +1,9 @@
 package main
 
 import (
-	_defer "study/defer"
+	"study/sort"
 )
 
 func main() {
-	_defer.Handle()
+	sort.Handle()
 }
