@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/sort"
+	"study/slice"
 )
 
 func main() {
-	sort.Handle()
+	slice.Handle()
 }
