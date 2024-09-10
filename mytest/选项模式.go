@@ -35,7 +35,7 @@ func NewClient(opts ...Option) *Client {
 	return client
 }
 
-func Handle() {
+func Handle111() {
 	// 创建一个默认 5 秒超时的 http client
 	client := NewClient(WithTimeout(5 * time.Second))
 

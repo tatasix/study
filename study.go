@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/slice"
+	"study/leetcode/second"
 )
 
 func main() {
-	slice.Handle()
+	second.Handle()
 }
