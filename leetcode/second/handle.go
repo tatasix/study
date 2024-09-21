@@ -1,9 +1,9 @@
 package second
 
 import (
-	"study/leetcode/second/stackqueue"
+	"study/leetcode/second/backtrack"
 )
 
 func Handle() {
-	stackqueue.Handle()
+	backtrack.Handle()
 }
