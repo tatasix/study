@@ -1,9 +1,9 @@
 package second
 
 import (
-	"study/leetcode/second/backtrack"
+	"study/leetcode/second/dynamicplan"
 )
 
 func Handle() {
-	backtrack.Handle()
+	dynamicplan.Handle()
 }
