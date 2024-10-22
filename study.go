@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/leetcode/second"
+	"study/leetcode/second/list"
 )
 
 func main() {
-	second.Handle()
+	list.Handle()
 }
