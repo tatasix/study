@@ -9,6 +9,8 @@ package list
 func detectCycle(head *ListNode) *ListNode {
 	left, right := head, head
 	for right != nil && right.Next != nil {
+		right = right.Next.Next
+		left = left.Next
 		if right == left {
 			//相遇了
 			other := head
@@ -18,8 +20,6 @@ func detectCycle(head *ListNode) *ListNode {
 			}
 			return other
 		}
-		right = right.Next.Next
-		left = left.Next
 	}
 	return nil
 }
