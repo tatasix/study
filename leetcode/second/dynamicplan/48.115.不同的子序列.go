@@ -9,7 +9,7 @@ import "fmt"
 // 如下所示, 有 3 种可以从 s 中得到 "rabbit" 的方案。
 // 示例 2： 输入：s = "babgbag", t = "bag" 输出：5
 // 如下所示, 有 5 种可以从 s 中得到 "bag" 的方案。
-func numDistinct(s string, t string) int {
+func numDistinct1(s string, t string) int {
 	ls, lt := len(s), len(t)
 	dp := make([][]int, ls+1)
 	for i := range dp {
@@ -26,6 +26,25 @@ func numDistinct(s string, t string) int {
 		}
 	}
 	return dp[ls][lt]
+}
+
+func numDistinct(s string, t string) int {
+	l1, l2 := len(s), len(t)
+	dp := make([][]int, l1+1)
+	for i := range dp {
+		dp[i] = make([]int, l2+1)
+		dp[i][0] = 1
+	}
+	for i := 1; i <= l1; i++ {
+		for j := 1; j <= l2; j++ {
+			if s[i-1] == t[j-1] {
+				dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
+			} else {
+				dp[i][j] = dp[i-1][j]
+			}
+		}
+	}
+	return dp[l1][l2]
 }
 
 func Handle48() {

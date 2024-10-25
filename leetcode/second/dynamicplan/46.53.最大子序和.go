@@ -26,7 +26,7 @@ func maxSubArray1(nums []int) int {
 	return result
 }
 
-func maxSubArray(nums []int) int {
+func maxSubArray2(nums []int) int {
 	l := len(nums)
 	dp := make([]int, l)
 	dp[0] = nums[0]
@@ -40,7 +40,35 @@ func maxSubArray(nums []int) int {
 	return result
 }
 
+func maxSubArray(nums []int) int {
+	l := len(nums)
+	dp := make([]int, l)
+	dp[0] = nums[0]
+	result := nums[0]
+	for i := 1; i < l; i++ {
+		dp[i] = max(nums[i], dp[i-1]+nums[i])
+		if result < dp[i] {
+			result = dp[i]
+		}
+	}
+
+	return result
+}
+func maxSubArray3(nums []int) int {
+	result := math.MinInt32
+	var count int
+	for i := 0; i < len(nums); i++ {
+		count += nums[i]
+		if count > result {
+			result = count
+		}
+		if count < 0 {
+			count = 0
+		}
+	}
+	return result
+}
 func Handle46() {
-	nums := []int{1}
+	nums := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
 	fmt.Println(maxSubArray(nums))
 }

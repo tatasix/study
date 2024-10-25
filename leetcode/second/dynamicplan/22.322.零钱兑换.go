@@ -13,7 +13,7 @@ import (
 //示例 4: 输入:coins = [1], amount = 1 输出:1
 //示例 5: 输入:coins = [1], amount = 2 输出:2
 
-func coinChange(coins []int, amount int) int {
+func coinChange1(coins []int, amount int) int {
 	l := len(coins)
 	dp := make([]int, amount+1)
 	for i := 1; i <= amount; i++ {
@@ -33,7 +33,40 @@ func coinChange(coins []int, amount int) int {
 	}
 	return dp[amount]
 }
-
+func coinChange(coins []int, amount int) int {
+	l := len(coins)
+	dp := make([]int, amount+1)
+	for i := range dp {
+		dp[i] = math.MaxInt32
+	}
+	dp[0] = 0
+	for i := 0; i < l; i++ {
+		for j := coins[i]; j <= amount; j++ {
+			if dp[j-coins[i]] != math.MaxInt32 {
+				dp[j] = min(dp[j], dp[j-coins[i]]+1)
+			}
+		}
+	}
+	return dp[amount]
+}
 func Handle22() {
-	fmt.Println(coinChange([]int{1, 2, 5}, 11))
+	//fmt.Println(coinChange([]int{1, 2, 5}, 11))
+	fmt.Println(productExceptSelf([]int{1, 2, 3, 4}))
+}
+func productExceptSelf(nums []int) []int {
+	l := len(nums)
+	left := make([]int, l)
+	right := make([]int, l)
+	left[0] = 1
+	right[l-1] = 1
+	for i := 1; i < l; i++ {
+		left[i] = left[i-1] * nums[i-1]
+	}
+	for i := l - 2; i >= 0; i-- {
+		right[i] = right[i+1] * nums[i+1]
+	}
+	for i := 0; i < l; i++ {
+		left[i] *= right[i]
+	}
+	return left
 }

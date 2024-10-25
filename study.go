@@ -1,9 +1,8 @@
 package main
 
-import (
-	"study/leetcode/second/list"
-)
+import "study/leetcode/second/dynamicplan"
 
 func main() {
-	list.Handle()
+	dynamicplan.Handle()
+	//other.Handle()
 }

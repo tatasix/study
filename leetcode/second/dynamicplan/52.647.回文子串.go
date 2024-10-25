@@ -23,7 +23,7 @@ func countSubstrings1(s string) int {
 	}
 	return result
 }
-func countSubstrings(s string) int {
+func countSubstrings2(s string) int {
 	var result int
 	l := len(s)
 
@@ -40,7 +40,25 @@ func countSubstrings(s string) int {
 	}
 	return result
 }
-
+func countSubstrings(s string) int {
+	l := len(s)
+	dp := make([][]bool, l)
+	for i := range dp {
+		dp[i] = make([]bool, l)
+	}
+	var result int
+	for i := l - 1; i >= 0; i-- {
+		for j := i; j < l; j++ {
+			if s[i] == s[j] {
+				if j-1 <= 1 || dp[i+1][j-1] == true {
+					dp[i][j] = true
+					result++
+				}
+			}
+		}
+	}
+	return result
+}
 func Handle52() {
 	s := "aaa"
 	fmt.Println(countSubstrings(s))

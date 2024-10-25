@@ -8,7 +8,7 @@ import "fmt"
 // 解释:最⻓递增子序列是 [2,3,7,101]，因此⻓度为 4 。
 // 示例 2: 输入:nums = [0,1,0,3,2,3] 输出:4
 // 示例 3: 输入:nums = [7,7,7,7,7,7,7] 输出:1
-func lengthOfLIS(nums []int) int {
+func lengthOfLIS1(nums []int) int {
 	l := len(nums)
 	result := 1
 	dp := make([]int, l)
@@ -28,8 +28,27 @@ func lengthOfLIS(nums []int) int {
 
 	return result
 }
+func lengthOfLIS(nums []int) int {
+	l := len(nums)
+	dp := make([]int, l)
+	for i := range dp {
+		dp[i] = 1
+	}
+	var result int
+	for i := 0; i < l; i++ {
+		for j := 0; j < i; j++ {
+			if nums[i] > nums[j] {
+				dp[i] = max(dp[i], dp[j]+1)
+				if result < dp[i] {
+					result = dp[i]
+				}
+			}
+		}
+	}
+	return result
+}
 
 func Handle41() {
-	nums := []int{10, 9, 2, 5, 3, 7, 101, 18}
+	nums := []int{2, 3, 7, 101}
 	fmt.Println(lengthOfLIS(nums))
 }

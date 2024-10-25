@@ -10,7 +10,7 @@ import "fmt"
 // 其他满足题意但较小的子集包括 {"0001","1"} 和 {"10","1","0"} 。{"111001"} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。
 // 示例 2： 输入：strs = ["10", "0", "1"], m = 1, n = 1 输出：2
 // 解释：最大的子集是 {"0", "1"} ，所以答案是 2 。
-func findMaxForm(strs []string, m int, n int) int {
+func findMaxForm1(strs []string, m int, n int) int {
 	l := len(strs)
 	dp := make([][]int, m+1)
 	for i := 0; i <= m; i++ {
@@ -36,6 +36,28 @@ func findMaxForm(strs []string, m int, n int) int {
 	return dp[m][n]
 }
 
+func findMaxForm(strs []string, m int, n int) int {
+	dp := make([][]int, m+1)
+	for i := range dp {
+		dp[i] = make([]int, n+1)
+	}
+	for i := 0; i < len(strs); i++ {
+		zero, one := 0, 0
+		for j := 0; j < len(strs[i]); j++ {
+			if strs[i][j] == '0' {
+				zero++
+			} else {
+				one++
+			}
+		}
+		for j := m; j >= zero; j-- {
+			for k := n; k >= one; k-- {
+				dp[j][k] = max(dp[j][k], dp[j-zero][k-one]+1)
+			}
+		}
+	}
+	return dp[m][n]
+}
 func Handle17() {
 	fmt.Println(findMaxForm([]string{"10", "0", "1"}, 1, 1))
 }

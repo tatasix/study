@@ -9,7 +9,7 @@ import "fmt"
 //注意，你可以假设:
 //0 <= amount (总金额) <= 5000 1 <= coin (硬币面额) <= 5000 硬币种类不超过 500 种 结果符合 32 位符号整数
 
-func change(amount int, coins []int) int {
+func change1(amount int, coins []int) int {
 	dp := make([]int, amount+1)
 	dp[0] = 1
 	l := len(coins)
@@ -23,6 +23,16 @@ func change(amount int, coins []int) int {
 	return dp[amount]
 }
 
+func change(amount int, coins []int) int {
+	dp := make([]int, amount+1)
+	dp[0] = 1
+	for i := 0; i < len(coins); i++ {
+		for j := coins[i]; j <= amount; j++ {
+			dp[j] += dp[j-coins[i]]
+		}
+	}
+	return dp[amount]
+}
 func Handle19() {
 	fmt.Println(change(5, []int{1, 2, 5}))
 }

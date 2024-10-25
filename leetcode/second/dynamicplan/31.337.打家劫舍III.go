@@ -7,6 +7,7 @@ type TreeNode struct {
 }
 
 func rob(root *TreeNode) int {
+	// ⻓度为2的数组，0:不偷，1:偷
 	var backTrack func(*TreeNode) []int
 	backTrack = func(node *TreeNode) []int {
 		if node == nil {
@@ -14,7 +15,7 @@ func rob(root *TreeNode) int {
 		}
 		left := backTrack(node.Left)
 		right := backTrack(node.Right)
-		val1 := node.Val + left[0] + right[0] //不选
+		val1 := node.Val + left[0] + right[0] //偷
 		val2 := max(left[0], left[1]) + max(right[0], right[1])
 		return []int{val2, val1}
 	}

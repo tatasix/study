@@ -102,7 +102,7 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 		n--
 	}
 }
-func Handle() {
+func Handle1() {
 	var res []byte
 	ss := "Let's take LeetCode contest"
 	s := []byte(ss)
